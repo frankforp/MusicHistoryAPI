@@ -4,7 +4,7 @@ class Artist(models.Model):
     """
     The Artist table maintains the Artists' Albums and Songs
     """
-    artist_name = models.CharField(max_length=128, default='SOME STRING')
+    artist_name = models.CharField(max_length=128)
 
     class Meta:
         verbose_name_plural = 'Artists'
@@ -16,8 +16,9 @@ class Album(models.Model):
     """
     The Album table maintains Albums' Artists and Songs
     """
-    album_title = models.CharField(max_length=128, default='SOME STRING')
-    album_release_date = models.DateField(default='2012-01-01')
+    album_title = models.CharField(max_length=128)
+    album_release_date = models.DateField()
+    artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
 
 
     class Meta:
@@ -30,7 +31,7 @@ class Genre(models.Model):
     """
     The Genre table maintains the Genres of Songs
     """
-    genre_name = models.CharField(max_length=128, default='SOME STRING')
+    genre_name = models.CharField(max_length=128)
 
 
     class Meta:
@@ -44,9 +45,13 @@ class Song(models.Model):
     """
     The Song table maintains Songs' Genres, artists, and albums
     """
-    song_title = models.CharField(max_length=128, default='SOME STRING')
-    song_length = models.CharField(max_length=128, default='SOME STRING')
-    song_release_date = models.DateField(default='2016-01-01')
+    song_title = models.CharField(max_length=128)
+    song_length = models.CharField(max_length=128)
+    song_release_date = models.DateField()
+    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+    album = models.ForeignKey(Album, on_delete=models.CASCADE)
+    artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
+
 
 
     class Meta:
