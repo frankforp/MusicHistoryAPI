@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'MusicHistoryAPI',
+    'rest_framework',
+    'MusicHistoryAPI.apps.MusichistoryapiConfig'
+    # 'MusicHistoryAPI',
 ]
 
 MIDDLEWARE = [
