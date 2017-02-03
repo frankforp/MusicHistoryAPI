@@ -12,6 +12,7 @@ class Artist(models.Model):
     def __str__(self):
         return str(self.artist_name)
 
+
 class Album(models.Model):
     """
     The Album table maintains Albums' Artists and Songs
@@ -20,19 +21,18 @@ class Album(models.Model):
     album_release_date = models.DateField()
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
 
-
     class Meta:
         verbose_name_plural = 'Albums'
 
     def __str__(self):
         return str(self.album_title)
 
+
 class Genre(models.Model):
     """
     The Genre table maintains the Genres of Songs
     """
     genre_name = models.CharField(max_length=128)
-
 
     class Meta:
         verbose_name_plural = 'Genres'
@@ -51,8 +51,6 @@ class Song(models.Model):
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
-
-
 
     class Meta:
         verbose_name_plural = 'Songs'
