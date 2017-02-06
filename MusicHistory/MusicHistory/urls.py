@@ -1,13 +1,13 @@
 from django.conf.urls import url, include
 from django.contrib import admin
-from MusicHistoryAPI import views
+from MusicHistoryAPI.views import *
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'artists', views.ArtistViewSet)
-router.register(r'albums', views.AlbumViewSet)
-router.register(r'songs', views.SongViewSet)
-router.register(r'genre', views.GenreViewSet)
+router.register(r'artists', artist_view.ArtistViewSet)
+router.register(r'albums', album_view.AlbumViewSet)
+router.register(r'songs', song_view.SongViewSet)
+router.register(r'genre', genre_view.GenreViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
