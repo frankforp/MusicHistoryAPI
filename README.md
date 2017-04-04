@@ -2,11 +2,11 @@
 MusicHistory-api
 ===============
 
-##Description
+## Description
 
 This is a REST API to be used to house a collection of Music (Artists, Genres, Songs, and Albums)
 
-##Installation
+## Installation
 
 1.  Make sure you have Python 3.6.0 installed. See instructions for download here:
     https://www.python.org/downloads/
@@ -18,13 +18,13 @@ This is a REST API to be used to house a collection of Music (Artists, Genres, S
 
 4.  Go into the project's root folder and follow the "How to Run" instructions below.
 
-##Requirements
+## Requirements
     * Django==1.10.5
     * djangorestframework==3.5.3
 
-##How to Run
+## How to Run
 
-###MAC
+### MAC
 Create a virtual environment
 ```
 python -m venv venv
@@ -42,7 +42,7 @@ To deactivate the virtual environment
 deactivate
 ```
 
-###WINDOWS
+### WINDOWS
 Install virtual env and wrapper
 ```
 pip install virtualenvwrapper-win
@@ -64,7 +64,7 @@ To deactivate the virtual environment
 deactivate
 ```
 
-###After creating a virtualenv
+### After creating a virtualenv
 Change into the MusicHistory directory
 ```
 cd MusicHistory/
@@ -93,9 +93,9 @@ username: admin
 password: password123
 ```
 
-##How to use
+## How to use
 
-###Collections
+### Collections
 ```
 * GET - http://127.0.0.1:8000/artists           returns all artists
 * GET - http://127.0.0.1:8000/albums            returns all albums
@@ -103,7 +103,7 @@ password: password123
 * GET - http://127.0.0.1:8000/genres            returns all genres
 ```
 
-###Members
+### Members
 ```
 * GET - http://127.0.0.1:8000/artists/<id>          returns an artist by id
 * GET - http://127.0.0.1:8000/albums/<id>           returns an album by id
@@ -115,7 +115,7 @@ password: password123
 |------------|---------------|--------------------------|
 | format     | json          | the data type to return. |
 
-##Example
+## Example
 ```
 // http://127.0.0.1:8000/artists/1/?format=json
 
